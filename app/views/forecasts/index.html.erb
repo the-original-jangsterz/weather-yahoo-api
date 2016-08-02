@@ -1,2 +1,9 @@
 <h1>Forecasts</h1>
-<%= @data %>
+<h2>Current Temperature: <%= @temperature %></h2>
+<h2>5 Day Forecast:</h2>
+<% @forecast_days[0..4].each do |forecast_day| %>
+  <h3><%= forecast_day["date"] %></h3>
+  <p>High: <%= forecast_day["high"] %></p>
+  <p>Low: <%= forecast_day["low"] %></p>
+  <p><%= forecast_day["text"] %></p>
+<% end %>
